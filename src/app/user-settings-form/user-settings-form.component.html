@@ -1,9 +1,16 @@
 <div class="container">
-  <p>User Settings</p>
-  <form>
+  <h2>User Settings</h2>
+  <form #form="ngForm">
     <div class="form-group">
       <label for="name" class="form-label">Name </label>
-      <input type="text" id="name" class="form-control" placeholder="Name" />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        placeholder="Name"
+        [(ngModel)]="userSettings.name"
+      />
     </div>
 
     <div class="form-check">
@@ -12,6 +19,7 @@
         class="form-check-input"
         name="emailOffers"
         id="emailOffers"
+        [(ngModel)]="userSettings.emailOffers"
       />
       <label for="emailOffers" class="form-check-label"
         >Email Special Offers</label
@@ -28,6 +36,7 @@
           id="lightInterface"
           value="light"
           checked
+          [(ngModel)]="userSettings.interfaceStyle"
         />
         <label class="form-check-label" for="lightInterface"> Light </label>
       </div>
@@ -38,6 +47,7 @@
           name="interfaceStyle"
           id="mediumInterface"
           value="medium"
+          [(ngModel)]="userSettings.interfaceStyle"
         />
         <label class="form-check-label" for="mediumInterface"> Medium </label>
       </div>
@@ -48,15 +58,21 @@
           name="interfaceStyle"
           id="darkInterface"
           value="dark"
+          [(ngModel)]="userSettings.interfaceStyle"
         />
         <label class="form-check-label" for="darkInterface"> Dark </label>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="subscriptionType">Subscrition Type</label>
+      <label for="subscriptionType">Subscription Type</label>
 
-      <select name="" id="subscriptionType" class="form-control">
+      <select
+        name="subscriptionType"
+        id="subscriptionType"
+        class="form-control"
+        [(ngModel)]="userSettings.subscriptionType"
+      >
         <option value="monthly">Monthly</option>
         <option value="annual">Annual</option>
         <option value="lifetime">Lifetime</option>
@@ -76,4 +92,6 @@
 
     <button class="btn btn-primary">Send</button>
   </form>
+
+  {{ form.value | json }}
 </div>
