@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm, NgModel } from '@angular/forms';
 import { IUserSettings } from './../data/user-settings';
 
 @Component({
@@ -19,4 +20,8 @@ export class UserSettingsFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit(form: NgForm) {}
+
+  onBlur(field: NgModel) {}
 }
