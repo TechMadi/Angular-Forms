@@ -10,10 +10,13 @@ Angular has two types of forms
 
 ## Tempalte Driven Forms
 
--Form Basics
--Data Binding
--Form Validation
--Http Requests
--Thirdy Party Forms
+- Form Basics
+- Data Binding
+- Form Validation
+- Http Requests
+- Thirdy Party Forms
+  - [Formly](https://formly.dev/)
+  - [Ngx-Bootstrap](https://valor-software.com/ngx-bootstrap/#/)
+  - [angular.io](https://angular.io/)
 
 More in the notes.ts file
