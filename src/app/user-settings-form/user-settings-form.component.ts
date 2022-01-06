@@ -27,12 +27,14 @@ export class UserSettingsFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.dataService.postUserSettingsForm(this.userSettings).subscribe(
-      (res) => {
-        console.log('Success');
-      },
-      (err) => {}
-    );
+    // this.dataService.postUserSettingsForm(this.userSettings).subscribe(
+    //   (res) => {
+    //     console.log('Success');
+    //   },
+    //   (err) => {}
+    // );
+
+    alert('Make the  form work ');
   }
 
   onBlur(field: NgModel) {}

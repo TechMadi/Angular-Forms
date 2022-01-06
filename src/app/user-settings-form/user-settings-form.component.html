@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>User Settings</h2>
+  <p>User Settings Form</p>
   <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="name" class="form-label">Name </label>
@@ -14,13 +14,6 @@
         (blur)="onBlur(nameField)"
         required
       />
-
-      <div
-        *ngIf="nameField.invalid || nameField.touched"
-        class="alert alert-danger"
-      >
-        Enter a name
-      </div>
     </div>
 
     <div class="form-check">
@@ -58,6 +51,7 @@
           id="mediumInterface"
           value="medium"
           [(ngModel)]="userSettings.interfaceStyle"
+          required
         />
         <label class="form-check-label" for="mediumInterface"> Medium </label>
       </div>
@@ -82,6 +76,7 @@
         id="subscriptionType"
         class="form-control"
         [(ngModel)]="userSettings.subscriptionType"
+        required
       >
         <option *ngFor="let type of subscriptionType | async">
           {{ type }}
@@ -100,8 +95,6 @@
       ></textarea>
     </div>
 
-    <button class="btn btn-primary">Send</button>
+    <button class="btn btn-primary" [disabled]="form.invalid">Send</button>
   </form>
-
-  {{ form.value | json }}
 </div>
