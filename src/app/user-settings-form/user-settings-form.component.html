@@ -83,9 +83,9 @@
         class="form-control"
         [(ngModel)]="userSettings.subscriptionType"
       >
-        <option value="monthly">Monthly</option>
-        <option value="annual">Annual</option>
-        <option value="lifetime">Lifetime</option>
+        <option *ngFor="let type of subscriptionType | async">
+          {{ type }}
+        </option>
       </select>
     </div>
 
